@@ -19,6 +19,7 @@ install:
 - npm install
 script:
 - hexo cl && hexo g -d
+- hexo cl && hexo g --config coding_config.yml -d
 cache:
   directories:
   - node_modules
