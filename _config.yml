@@ -111,5 +111,5 @@ theme: indigo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/andot/Coolcode.git
+  repo: git@github.com:andot/Coolcode
   branch: gh-pages
