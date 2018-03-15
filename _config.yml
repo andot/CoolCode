@@ -102,6 +102,9 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# HostedBy
+hosted_by: Hosted by <a href="https://pages.github.com" style="font-weight:bold">GitHub Pages</a> 
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
