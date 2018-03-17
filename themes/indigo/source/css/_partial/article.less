@@ -115,13 +115,15 @@
     font-size: 32px;
 }
 .post-nav {
-    margin-top: 30px;
+    //margin-top: 30px;
     padding: 16px 0 0;
 
     .prev,
     .next {
-        width: 47%;
-        background: @codeBg;
+        width: 49%;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
     }
 
     .next {
@@ -198,7 +200,6 @@
     line-height: 1.8;
 
     >.highlight,
-    >.image-bubble,
     >pre {
         margin-left: -35px;
         margin-right: -35px;
@@ -356,7 +357,6 @@
         padding: 16px 20px;
         border-left: 4px solid @primaryColor;
         color: lighten(@primaryTextColor, 30%);
-        background: @codeBg;
         font-size: 14px;
         border-radius: 0 2px 2px 0;
 
@@ -430,17 +430,12 @@
         font-family: @font-code;
     }
 
-    code,
-    pre {
-        background: @codeBg
-    }
-
     p code,
     li code {
         color: @accentColor;
         line-height: 1;
         margin: 0 4px;
-        font-size: 80%;
+        font-size: 100%;
         padding: 3px 5px;
         border: 1px solid #eee;
         border-radius: 2px;
