@@ -101,17 +101,17 @@ Set-ExecutionPolicy -Scope CurrentUser Bypass
 
 ![默认新宋体下显示ScreenFetch的效果](ScreenFetchWithNSimSun.png)
 
-不只是汉字不好看，英文更是难看。在默认的 GBK 页码页（CP936）下面可选的字体不多，只有几个汉字字体和两个日文字体。那些汉字字体在控制台下面没有一个好看的，日文字体更是没法看。如果用：
+不只是汉字不好看，英文更是难看。在默认的{% ruby 代码页|CodePage %} {% ruby GBK|936 %} 下面可选的字体不多，只有几个汉字字体和两个日文字体。那些汉字字体在控制台下面没有一个好看的，日文字体更是没法看。如果用：
 
 ```cmd
 chcp 65001
 ```
 
-切换到 UTF-8 的页码页，会多出几个可选的英文字体，其中 `Consolas` 这个字体看上去倒还可以，不过汉字仍然是新宋体，还是不够完美，差不多是这样的效果吧：
+切换到 {% ruby UTF-8|65001 %} 的{% ruby 代码页|CodePage %}，会多出几个可选的英文字体，其中 `Consolas` 这个字体看上去倒还可以，不过汉字仍然是新宋体，还是不够完美，差不多是这样的效果吧：
 
 ![Consolas下显示ScreenFetch的效果](ScreenFetchWithConsolas.png)
 
-之前在 Linux 下使用 VSCode 时，使用过一款更纱黑体 [Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic), 感觉非常不错。当时选择这款字体的原因是，在 Linux 下使用 VSCode 时， 如果使用其它的汉字等宽字体，比如“文泉驿等宽正黑”、“文泉驿等宽微米黑”，或者使用一些比较好看的英文等宽字体配合这些汉字字体时，普通的空格会变成占 2 个字符的宽度。这样的话，代码排版就乱了。但是如果换成这款汉字字体，不但等宽问题解决了，而且这款字体还相当漂亮，不论是用于代码编写还是控制台，都是非常合适。于是果断安装这款字体到 Windows 10 上，然后在 Windows 10 的 PowerShell 控制台选中它：
+之前在 Linux 下使用 VSCode 时，使用过一款 [{% ruby 更纱黑体|Sarasa-Gothic %}](https://github.com/be5invis/Sarasa-Gothic)，感觉非常不错。当时选择这款字体的原因是，在 Linux 下使用 VSCode 时， 如果使用其它的汉字等宽字体，比如“文泉驿等宽正黑”、“文泉驿等宽微米黑”，或者使用一些比较好看的英文等宽字体配合这些汉字字体时，普通的空格会变成占 2 个字符的宽度。这样的话，代码排版就乱了。但是如果换成这款汉字字体，不但等宽问题解决了，而且这款字体还相当漂亮，不论是用于代码编写还是控制台，都是非常合适。于是果断安装这款字体到 Windows 10 上，然后在 Windows 10 的 PowerShell 控制台选中它：
 
 ![选择Sarasa Term SC](SarasaTermSC.png)
 
@@ -260,9 +260,9 @@ Import-Module oh-my-posh
 Set-Theme paradox
 ```
 
-来加载模块和主题了。上面代码中的 `paradox` 是 [oh-my-posh](https://github.com/JanJoris/oh-my-posh) 的一个主题名称。不过这个主题再 Windows 控制台下面有 bug，当光标移动到控制台窗口的最下面一行后，再输入命令时，命令行提示符会消失，这会让人很不爽。
+来加载模块和主题了。上面代码中的 `paradox` 是 [oh-my-posh](https://github.com/JanJoris/oh-my-posh) 的一个主题名称。不过这个主题在 Windows 控制台下面有 bug，当光标移动到控制台窗口的最下面一行后，再输入命令，命令行提示符会消失，这让人很不爽。
 
-[oh-my-posh](https://github.com/JanJoris/oh-my-posh) 的主题有不少，但大致分为两类，一类时命令行提示符跟命令行在同一行上，另一类是不在同一行上。
+[oh-my-posh](https://github.com/JanJoris/oh-my-posh) 的主题有不少，但大致分为两类，一类是命令提示符跟命令输入行在同一行上，另一类是不在同一行上。
 
 `paradox` 就属于不在同一行上主题，其它几个不在同一行上的主题都有跟 `paradox` 主题一样的问题。
 
@@ -354,7 +354,7 @@ $sl.Colors.VirtualEnvForegroundColor = [System.ConsoleColor]::White
 Set-Theme PowerLine
 ```
 
-命令来设置这个主题了。
+来设置这个主题了。
 
 如果你觉得每次启动这些模块都要手动输入很麻烦的话，可以编辑：
 
@@ -389,5 +389,22 @@ Screenfetch
 ![VSCode 下的 PowerShell 控制台](screenfetchOnVSCode.png)
 
 上面这一段代码中，最后一句 `Screenfetch` 会占用比较长的时间，如果你不想每次点开控制台都要等上几秒钟的话，可以不要这一句，只是效果不够装逼了而已。
+
+安装了 oh-my-posh 之后，命令行操作爽多了，但是还有一个问题未解决。
+
+如果把控制台{% ruby 代码页|CodePage %}切换到 {% ruby UTF-8|65001 %} 的情况下，在 PowerShell 命令行中输入汉字的话，汉字、日文、表情符等非英文字符会有重叠问题，如果按 Tab 键，在下面出现的提示补全信息中的汉字、日文、表情符等也会出现重叠问题。开始我以为这是 Windows 控制台的锅，后来发现 WSL 下并不会有这个问题。然后经过搜索，确认这是 PowerShell 的 Bug，目前虽然有人提供了补丁，但是官方似乎没有合并的意思：
+
+> https://github.com/PowerShell/PowerShell/pull/5739
+
+另外，就算 github 上这个 PowerShell 项目把这个问题解决了，它跟 Windows 10 中自带的 PowerShell 也不是一回事。从 Github 上下载安装的这个 PowerShell 是一个独立的版本，安装之后，跟 Windows 10 自带的那个 PowerShell 是并存的，并不是升级替换。
+
+不过还好，这个问题目前也有解决的方法，那就是升级 Windows 10 的 PowerShell 自带的 [PSReadLine](https://www.powershellgallery.com/packages/PSReadline/2.0.0-beta1) 模块到最新的 2.0.0-beta1 版，最新的 2.0.0-beta1 版本已经把这个问题基本解决了，虽然还是不够完美，但是比没完全解决的时候还是好多了。不过升级 PSReadLine 之前，还要先升级 Windows 10 自带 [PowerShellGet](https://www.powershellgallery.com/packages/PowerShellGet/1.6.0) 模块到最新版，因为自带的版本不支持安装 beta 版的 PSReadLine (lll￢ω￢)。安装过程倒不复杂，打开 PowerShell 管理员控制台，执行：
+
+```
+Install-Module -Name PowerShellGet -Force
+Install-Module -Name PSReadLine -AllowPrerelease -Force
+```
+
+然后重启 PowerShell 控制台，就可以在 PowerShell 命令行里正常输入汉字了。
 
 好了，今天就先写到这里，明天再写如何配置让 PowerShell 变得更好用。
