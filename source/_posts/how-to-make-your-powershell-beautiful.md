@@ -117,6 +117,35 @@ chcp 65001
 
 然后就能看到本文最开始的那幅图的效果了。而且这款字体已经内置了 PowerLine 字体，后面我们安装 PowerLine 效果的命令行提示符时，就不需要再装任何其它的 PowerLine 字体了。
 
+到这里，字体配置已经完成一大半了。但是如果你使用 WSL，并且在 WSL 里面配置了 PowerLine 命令提示符的话，你会发现，在进入 Git 目录时会看到命令提示符中有个“□”：
+
+![字体中的乱码](WSL1.png)
+
+这个是个表情符“✎”，但是因为 Sarasa 系列字体中不包含表情符，因此就只能显示乱码了。不过也有解决办法，打开注册表编辑器，找到路径：
+
+```reg
+计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink
+```
+
+在其中新建多字符串值，名称为：`Sarasa Term SC`，内容为：
+
+```reg
+MICROSS.TTF,Microsoft Sans Serif,108,122
+MICROSS.TTF,Microsoft Sans Serif
+MINGLIU.TTC,PMingLiU
+MSMINCHO.TTC,MS PMincho
+BATANG.TTC,Batang
+MSYH.TTC,Microsoft YaHei UI
+MSJH.TTC,Microsoft JhengHei UI
+YUGOTHM.TTC,Yu Gothic UI
+MALGUN.TTF,Malgun Gothic
+SEGUISYM.TTF,Segoe UI Symbol
+```
+
+这段内容是复制的{% ruby 宋体|SimSun %}的，如果你愿意的话，可以用同样的方法把 `Sarasa` 系列的都注册一下，如果像我这么懒的话，只修改这一个，然后重启计算机也是可以了。修改之后的效果是这样的：
+
+![没有乱码了](WSL2.png)
+
 # Windows 10 控制台的颜色设置
 
 字体问题解决了之后，接下来就是控制台的配色问题了。很多人放弃使用 Windows 的控制台，转而使用 ConEmu，Cmder 等第三方控制台程序，就是因为 Windows 控制台默认的配色太难看了。
