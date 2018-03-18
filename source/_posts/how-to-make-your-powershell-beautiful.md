@@ -133,7 +133,7 @@ colortool -b campbell
 
 然后会看到下图：
 
-![](colortool.png)
+![ColorTool](colortool.png)
 
 接下来在标题栏点击右键（或者单击标题栏左边的图标），在弹出菜单里面选最后一项属性，之后什么都不用做，直接点击确定，就可以把当前控制台和默认控制台的配色方案切换 campbell 主题了。下载包里自带了 8 款配色主题。其中 3 款是 ini 格式的，另外 5 款是 itermcolors 格式的。说实话，自带的这几款配色我都不是很喜欢，不过还好，我们可以从 [iTerm2 Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) 这里挑选我们喜欢的配色主题。
 
