@@ -1,7 +1,7 @@
 ---
 title: PowerShell 美化指南
 date: 2018-03-16 21:14:45
-updated: 2018-03-16 21:14:45
+updated: 2018-03-18 10:02:31
 categories: [编程, PowerShell]
 tags: [powershell]
 ---
@@ -123,13 +123,17 @@ chcp 65001
 
 但是实际上，Windows 10 的控制台的配色也是可以改的，很久之前 Windows 10 的控制台就已经支持 24 位真彩色，而且控制台也可以设置透明度，所以 Windows 10 的控制台完全可以配置的很酷炫。
 
-但是很多人不知道该怎么对 Windows 10 的控制台进行配色，我也是从网上搜索了好久才找到了这个微软提供的[配色工具](https://github.com/Microsoft/console/releases)，而且它还是开源的。
+但是很多人不知道该怎么对 Windows 10 的控制台进行配色，我也是从网上搜索了好久才找到了微软提供的这个[配色工具](https://github.com/Microsoft/console/releases)，而且它还是开源的。
 
 它的使用方式很简单，下载之后，解压缩，不需要安装，在解压缩的目录下面打开命令行（或者把解压缩的目录加入到 PATH 环境变量中），然后执行：
 
 ```cmd
 colortool -b campbell
 ```
+
+然后会看到下图：
+
+![](colortool.png)
 
 接下来在标题栏点击右键（或者单击标题栏左边的图标），在弹出菜单里面选最后一项属性，之后什么都不用做，直接点击确定，就可以把当前控制台和默认控制台的配色方案切换 campbell 主题了。下载包里自带了 8 款配色主题。其中 3 款是 ini 格式的，另外 5 款是 itermcolors 格式的。说实话，自带的这几款配色我都不是很喜欢，不过还好，我们可以从[iTerm Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)这里挑选我们喜欢的配色主题。
 
@@ -172,7 +176,7 @@ Install-Module PSColor
 Import-Module PSColor
 ```
 
-来导入该模块。之后，在输入 ls 就可以看到彩色文件列表了，如图：
+来导入该模块。之后，再输入 ls 就可以看到彩色文件列表了，如图：
 
 ![PSColor彩色文件列表](PSColor.png)
 
@@ -335,7 +339,9 @@ Set-Theme PowerLine
 Import-Module DirColors
 Update-DirColors ~/dircolors
 Import-Module posh-git
-Start-SshAgent -Quiet
+if (!(Get-SshAgent)) {
+    Start-SshAgent
+}
 Import-Module oh-my-posh
 Set-Theme PowerLine
 Screenfetch
@@ -345,14 +351,14 @@ Screenfetch
 
 ![ScreenFetch](screenfetch.png)
 
-如果你想在 VSCode 的控制台上使用的话，可以把上面的代码加入到：
+如果你想在 VSCode 的控制台上也能使用的话，可以把上面的代码加入到：
 
 > C:\Users\andot\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
 
-中，然后打开 VSCode 的控制台时，控制台也会自动执行这些脚本，效果如下：
+中，然后打开 VSCode 的控制台时，VSCode 的 PowerShell 控制台也会自动执行这些脚本，效果如下：
 
 ![VSCode 下的 PowerShell 控制台](screenfetchOnVSCode.png)
 
-上面这一段代码中，最后一句 `Screenfetch` 会占用比较长的时间，如果你不想每次点开控制台都要登上几秒钟的话，可以不要这一句，只是效果不够装逼了而已。
+上面这一段代码中，最后一句 `Screenfetch` 会占用比较长的时间，如果你不想每次点开控制台都要等上几秒钟的话，可以不要这一句，只是效果不够装逼了而已。
 
 好了，今天就先写到这里，明天再写如何配置让 PowerShell 变得更好用。
