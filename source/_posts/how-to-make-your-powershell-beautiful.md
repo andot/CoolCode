@@ -252,109 +252,15 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 安装完之后，要想使用，还需要安装 [git for windows](https://git-scm.com/)，普通版和 Portable 版本都可以，但是需要把安装之后的可执行文件目录加到 PATH 中。
 
-之后就可以执行：
+之后直接执行：
 
 ```powershell
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme paradox
-```
-
-来加载模块和主题了。上面代码中的 `paradox` 是 [oh-my-posh](https://github.com/JanJoris/oh-my-posh) 的一个主题名称。不过这个主题在 Windows 控制台下面有 bug，当光标移动到控制台窗口的最下面一行后，再输入命令，命令行提示符会消失，这让人很不爽。
-
-[oh-my-posh](https://github.com/JanJoris/oh-my-posh) 的主题有不少，但大致分为两类，一类是命令提示符跟命令输入行在同一行上，另一类是不在同一行上。
-
-`paradox` 就属于不在同一行上主题，其它几个不在同一行上的主题都有跟 `paradox` 主题一样的问题。
-
-如果选择在同一行上主题的话，`agnoster` 主题算是 `paradox` 主题的一个不错的代替。但是 `agnoster` 主题显示的是短路径，中间部分都用 `\..\` 省略了，会让人很难分辨当前目录的具体路径。
-
-所以我在 `agnoster` 和 `paradox` 主题的基础上，做了一个新主题，结合了它们两个的优点，下面是该主题的代码：
-
-```powershell PowerLine.psm1 https://raw.githubusercontent.com/andot/oh-my-posh/master/Themes/PowerLine.psm1 下载
-#requires -Version 2 -Modules posh-git
-
-function Write-Theme {
-
-    param(
-        [bool]
-        $lastCommandFailed,
-        [string]
-        $with
-    )
-
-    $lastColor = $sl.Colors.PromptBackgroundColor
-
-    $prompt = Write-Prompt -Object $sl.PromptSymbols.StartSymbol -ForegroundColor $sl.Colors.SessionInfoForegroundColor -BackgroundColor $sl.Colors.SessionInfoBackgroundColor
-
-    #check the last command state and indicate if failed
-    If ($lastCommandFailed) {
-        $prompt += Write-Prompt -Object "$($sl.PromptSymbols.FailedCommandSymbol) " -ForegroundColor $sl.Colors.CommandFailedIconForegroundColor -BackgroundColor $sl.Colors.SessionInfoBackgroundColor
-    }
-
-    #check for elevated prompt
-    If (Test-Administrator) {
-        $prompt += Write-Prompt -Object "$($sl.PromptSymbols.ElevatedSymbol) " -ForegroundColor $sl.Colors.AdminIconForegroundColor -BackgroundColor $sl.Colors.SessionInfoBackgroundColor
-    }
-
-    $user = [System.Environment]::UserName
-    $computer = Get-ComputerName
-    if (Test-NotDefaultUser($user)) {
-        $prompt += Write-Prompt -Object "$user@$computer " -ForegroundColor $sl.Colors.SessionInfoForegroundColor -BackgroundColor $sl.Colors.SessionInfoBackgroundColor
-    }
-
-    if (Test-VirtualEnv) {
-        $prompt += Write-Prompt -Object "$($sl.PromptSymbols.SegmentForwardSymbol) " -ForegroundColor $sl.Colors.SessionInfoBackgroundColor -BackgroundColor $sl.Colors.VirtualEnvBackgroundColor
-        $prompt += Write-Prompt -Object "$($sl.PromptSymbols.VirtualEnvSymbol) $(Get-VirtualEnvName) " -ForegroundColor $sl.Colors.VirtualEnvForegroundColor -BackgroundColor $sl.Colors.VirtualEnvBackgroundColor
-        $prompt += Write-Prompt -Object "$($sl.PromptSymbols.SegmentForwardSymbol) " -ForegroundColor $sl.Colors.VirtualEnvBackgroundColor -BackgroundColor $sl.Colors.PromptBackgroundColor
-    }
-    else {
-        $prompt += Write-Prompt -Object "$($sl.PromptSymbols.SegmentForwardSymbol) " -ForegroundColor $sl.Colors.SessionInfoBackgroundColor -BackgroundColor $sl.Colors.PromptBackgroundColor
-    }
-
-    # Writes the drive portion
-    $path = (Get-FullPath -dir $pwd).Replace('\', ' ' + [char]::ConvertFromUtf32(0xE0B1) + ' ') + ' '
-    $prompt += Write-Prompt -Object $path -ForegroundColor $sl.Colors.PromptForegroundColor -BackgroundColor $sl.Colors.PromptBackgroundColor
-
-    $status = Get-VCSStatus
-    if ($status) {
-        $themeInfo = Get-VcsInfo -status ($status)
-        $lastColor = $themeInfo.BackgroundColor
-        $prompt += Write-Prompt -Object $sl.PromptSymbols.SegmentForwardSymbol -ForegroundColor $sl.Colors.PromptBackgroundColor -BackgroundColor $lastColor
-        $prompt += Write-Prompt -Object " $($themeInfo.VcInfo) " -BackgroundColor $lastColor -ForegroundColor $sl.Colors.GitForegroundColor
-    }
-
-    if ($with) {
-        $prompt += Write-Prompt -Object $sl.PromptSymbols.SegmentForwardSymbol -ForegroundColor $lastColor -BackgroundColor $sl.Colors.WithBackgroundColor
-        $prompt += Write-Prompt -Object " $($with.ToUpper()) " -BackgroundColor $sl.Colors.WithBackgroundColor -ForegroundColor $sl.Colors.WithForegroundColor
-        $lastColor = $sl.Colors.WithBackgroundColor
-    }
-
-    # Writes the postfix to the prompt
-    $prompt += Write-Prompt -Object $sl.PromptSymbols.SegmentForwardSymbol -ForegroundColor $lastColor
-    $prompt += ' '
-    $prompt
-}
-
-$sl = $global:ThemeSettings #local settings
-$sl.PromptSymbols.SegmentForwardSymbol = [char]::ConvertFromUtf32(0xE0B0)
-$sl.Colors.SessionInfoBackgroundColor = [ConsoleColor]::DarkGray
-$sl.Colors.PromptForegroundColor = [ConsoleColor]::White
-$sl.Colors.PromptSymbolColor = [ConsoleColor]::White
-$sl.Colors.PromptHighlightColor = [ConsoleColor]::DarkBlue
-$sl.Colors.GitForegroundColor = [ConsoleColor]::DarkGray
-$sl.Colors.WithForegroundColor = [ConsoleColor]::White
-$sl.Colors.WithBackgroundColor = [ConsoleColor]::DarkRed
-$sl.Colors.VirtualEnvBackgroundColor = [System.ConsoleColor]::Red
-$sl.Colors.VirtualEnvForegroundColor = [System.ConsoleColor]::White
-```
-
-把它下载之后，放到 oh-my-posh 模块的 Themes 目录中。之后就可以用：
-
-```powershell
 Set-Theme PowerLine
 ```
 
-来设置这个主题了。
+就可以加载模块和 PowerLine 主题了。
 
 如果你觉得每次启动这些模块都要手动输入很麻烦的话，可以编辑：
 
