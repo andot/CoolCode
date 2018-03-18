@@ -40,7 +40,7 @@ cmdlet 更改其 InstallationPolicy 值。是否确实要从“PSGallery”安�
 [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助
 ```
 
-你可以按 {% kbd Y %} 或 {% kbd A %} 键，但是如果你觉得每次都这样麻烦的话，可以先执行下面的命令：
+你可以按 <kbd>Y</kbd> 或 <kbd>A</kbd> 键，但是如果你觉得每次都这样麻烦的话，可以先执行下面的命令：
 
 ```powershell
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
@@ -89,7 +89,7 @@ ws-screenfetch\1.0.2\Art.psm1，因为在此系统上禁止运行脚本。有关
 Set-ExecutionPolicy -Scope CurrentUser Bypass
 ```
 
-然后选 {% kbd A %} 就可以了。
+然后选 <kbd>A</kbd> 就可以了。
 
 接下来再执行 `screenfetch` 就可以看到类似于第一张截图的结果了，是不是很酷。
 
@@ -135,9 +135,9 @@ colortool -b campbell
 
 ![](colortool.png)
 
-接下来在标题栏点击右键（或者单击标题栏左边的图标），在弹出菜单里面选最后一项属性，之后什么都不用做，直接点击确定，就可以把当前控制台和默认控制台的配色方案切换 campbell 主题了。下载包里自带了 8 款配色主题。其中 3 款是 ini 格式的，另外 5 款是 itermcolors 格式的。说实话，自带的这几款配色我都不是很喜欢，不过还好，我们可以从[iTerm Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)这里挑选我们喜欢的配色主题。
+接下来在标题栏点击右键（或者单击标题栏左边的图标），在弹出菜单里面选最后一项属性，之后什么都不用做，直接点击确定，就可以把当前控制台和默认控制台的配色方案切换 campbell 主题了。下载包里自带了 8 款配色主题。其中 3 款是 ini 格式的，另外 5 款是 itermcolors 格式的。说实话，自带的这几款配色我都不是很喜欢，不过还好，我们可以从 [iTerm2 Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) 这里挑选我们喜欢的配色主题。
 
-不过从[iTerm Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)的配色方案实在是太多了，选起来本身也是个麻烦事，我最后在这几款中选出了下面这几款配色，感觉还不错，推荐给大家：
+不过从 [iTerm2 Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) 的配色方案实在是太多了，选起来本身也是个麻烦事，我最后在这几款中选出了下面这几款配色，感觉还不错，推荐给大家：
 
 * [ayu](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/ayu.itermcolors)
 * [Molokai](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Molokai.itermcolors)
@@ -239,7 +239,7 @@ Set-Theme paradox
 
 如果选择在同一行上主题的话，`agnoster` 主题算是 `paradox` 主题的一个不错的代替。但是 `agnoster` 主题显示的是短路径，中间部分都用 `\..\` 省略了，会让人很难分辨当前目录的具体路径。
 
-所以我在 `agnoster` 和 `paradox` 主题的基础上，新做了一个主题，结合了它们两个的优点，下面是该主题的代码：
+所以我在 `agnoster` 和 `paradox` 主题的基础上，做了一个新主题，结合了它们两个的优点，下面是该主题的代码：
 
 ```powershell PowerLine.psm1 https://raw.githubusercontent.com/andot/oh-my-posh/master/Themes/PowerLine.psm1 下载
 #requires -Version 2 -Modules posh-git

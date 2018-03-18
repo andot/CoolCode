@@ -24,7 +24,6 @@
     "hexo-ruby-character": "^1.0.6",
     "hexo-server": "^0.2.0",
     "hexo-tag-echarts3": "^1.1.1",
-    "hexo-tag-kbd": "0.0.1",
     "hexo-wordcount": "^3.0.2"
   }
 }

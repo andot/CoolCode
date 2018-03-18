@@ -35,6 +35,9 @@
         pre {
             margin: 0;
             padding: 0;
+            word-break: break-all;
+            word-wrap: break-world;
+            white-space: pre-wrap;
         }
 
         .line {
@@ -59,15 +62,37 @@
         }
 
         figcaption {
-            font-size: 0.85em;
-            color: @h-comment;
+            display: block;
+            font-size: 0.9em;
+            color: @accentColor;
             line-height: 1em;
-            margin-bottom: 1em;
-
+            margin: -20px -35px 0px;
+            padding: 10px 36px;
+            background: @backColor;
             a {
                 float: right
             }
+        }
 
+        figcaption + table {
+            pre {
+                margin-left: -24px;
+                counter-reset: linenumber;
+            }
+            .line:before {
+                display: block;
+                content: counter(linenumber);
+                counter-increment: linenumber;
+                width: 34px;
+                padding-right: 6px;
+                margin-right: 6px;
+                color: @h-comment;
+                font-size: 11px;
+                font-family: @font-code;
+                float: left;
+                text-align: right;
+                border-right: solid 1px @h-blue;
+            }
         }
 
         .gutter pre {
@@ -80,10 +105,13 @@
     }
 
     .plain {
-        background: #f5f5f5;
+        background: @backColor;
         pre {
-            background: #f5f5f5;
-            color: #4d4d4c;
+            background: @backColor;
+            color: @primaryTextColor;
+            word-wrap: normal;
+            word-break: keep-all;
+            white-space: pre;
         }
     }
 
@@ -225,5 +253,20 @@ pre {
         margin-left: -16px;
         margin-right: -16px;
         padding: 20px 16px;
+        figcaption + table pre {
+            margin-left: -8px;
+        }
+    }
+    .plain pre {
+        display: block;
+    }
+    .plain pre .line {
+        word-break: break-all;
+        word-wrap: break-world;
+        white-space: pre-wrap;
+    }
+
+    .plain pre .line:nth-of-type(2n) {
+        color:@secondaryTextColor;
     }
 }
