@@ -17,14 +17,14 @@ function renderImage(src, alt = '', title = '') {
     return `<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="${src}" alt="${alt}" title="${title}" onload="if(!this.getAttribute('width')){this.setAttribute('width',this.naturalWidth/2);this.srcset=this.src+' 2x';}" />
+                    <img src="${src}" alt="${alt}" title="${title}" />
                 </div>
                 <div class="image-caption">${title || alt}</div>
             </figure>`
 }
 
 hexo.extend.tag.register('image', ([src, alt = '', title = '']) => {
-    return hexo.theme.config.lightbox ? renderImage(src, alt, title) : `<img src="${src}" alt="${alt}" title="${title}" onload="if(!this.getAttribute('width')){this.setAttribute('width',this.naturalWidth/2);this.srcset=this.src+' 2x';}" />`
+    return hexo.theme.config.lightbox ? renderImage(src, alt, title) : `<img src="${src}" alt="${alt}" title="${title}" />`
 })
 
 hexo.extend.filter.register('before_post_render', data => {

@@ -435,6 +435,20 @@
                 new LightBox(el)
             })
         })(),
+        retina: (function() {
+            forEach.call($$('#post-content img'), function(img) {
+                var setRetina = function() {
+                    if (!img.getAttribute('width')) {
+                        img.setAttribute('width', img.naturalWidth/2);
+                        img.srcset=img.src + ' 2x';
+                    }
+                };
+                img.onload = setRetina;
+                if (img.complete) {
+                    setRetina();
+                }
+            })
+        })(),
         loadScript: function (scripts) {
             scripts.forEach(function (src) {
                 var s = d.createElement('script');
