@@ -116,3 +116,11 @@ deploy:
   type: git
   repo: git@github.com:andot/Coolcode
   branch: gh-pages
+
+imagemin:
+  enable     : true
+  interlaced : true
+  multipass  : true
+  optimizationLevel: 7
+  pngquant   : true
+  progressive: true
