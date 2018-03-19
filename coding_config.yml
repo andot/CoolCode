@@ -116,3 +116,11 @@ deploy:
   type: git
   repo: git@git.coding.net:andot/Coolcode
   branch: coding-pages
+
+imagemin:
+  enable     : true
+  interlaced : true
+  multipass  : true
+  optimizationLevel: 7
+  pngquant   : true
+  progressive: true
