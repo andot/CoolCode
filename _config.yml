@@ -117,36 +117,53 @@ deploy:
   repo: git@github.com:andot/Coolcode
   branch: gh-pages
 
-js_concator:
-  enable: false
-  bundle_path: '/js/bundle.js'
-  front: true
-  silent: false
-
-html_minifier:
+hfc_useref:
   enable: true
-  ignore_error: false
-  silent: false
+  concat: true
   exclude:
 
-css_minifier:
+hfc_html:
   enable: true
-  silent: false
+  exclude:
+
+hfc_css:
+  enable: true
   exclude:
     - '*.min.css'
 
-js_minifier:
+hfc_js:
   enable: true
   mangle: true
-  silent: false
   exclude:
     - '*.min.js'
 
-image_minifier:
+hfc_img:
   enable: true
   interlaced: true
   multipass: true
-  optimizationLevel: 3
+  optimizationLevel: 2
   pngquant: true
   progressive: true
-  silent: false
+  webp: true
+  webpQuality: 85
+  gifslice: true
+  jpegtran: true
+  jpegrecompress: true
+  jpegrecompressQuality: 'high'
+  optipng: true
+  svgo: true
+
+hfc_favicons:
+  enable: false
+  src: img/logo.png
+  target: img/
+  icons:
+    android: true
+    appleIcon: true
+    appleStartup: false
+    coast: false
+    favicons: true
+    firefox: false
+    opengraph: false
+    windows: true
+    yandex: false
