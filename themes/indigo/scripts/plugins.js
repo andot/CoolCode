@@ -13,6 +13,26 @@ const source = (path, cache, ext) => {
 hexo.extend.helper.register('theme_js', (path, cache) => source(path, cache, '.js'))
 hexo.extend.helper.register('theme_css', (path, cache) => source(path, cache, '.css'))
 
+const pinyin = require("pinyin");
+
+hexo.extend.tag.register('ruby', function(args) {
+    var splited = args.join(' ').split('|');
+    var origin = splited[0].trim();
+    var ruby = origin;
+    var convert = true;
+    if (splited.length > 1) {
+        ruby = splited[1].trim();
+        convert = !!splited[2];
+    }
+    if (convert) {
+        ruby = [].concat.apply([],pinyin(ruby, {
+            segment: true
+        })).join(' ');
+    }
+    var ruby_result = "<ruby>" + origin + "<rp> (</rp><rt>" + ruby + "</rt><rp>) </rp></ruby>"
+    return ruby_result;
+});
+
 function renderImage(src, alt = '', title = '') {
     return `<figure class="image-bubble">
                 <div class="img-lightbox">
