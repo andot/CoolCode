@@ -10,7 +10,6 @@
     "hexo-asset-image": "0.0.3",
     "hexo-autonofollow": "^1.0.1",
     "hexo-deployer-git": "^0.3.1",
-    "hexo-filter-auto-spacing": "^0.2.1",
     "hexo-filter-cleanup": "^1.0.7",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
