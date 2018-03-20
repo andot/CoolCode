@@ -89,7 +89,8 @@ postMessage: 本文共计 <%= wordcount(post.content) %> 字，阅读时长预�
 cnzz: false
 
 # 百度统计，如要开启，改为你的 key
-baidu_tongji: false
+baidu_tongji: 3d88a42f36d311b6e2c830ea185ed398
+baidu_push: true
 
 # 腾讯分析，如要开启，输入站点id
 tajs: false
