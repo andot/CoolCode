@@ -144,7 +144,7 @@ hfc_img:
   enable: true
   interlaced: true
   multipass: true
-  optimizationLevel: 2
+  optimizationLevel: 3
   pngquant: true
   progressive: true
   webp: true
@@ -157,16 +157,36 @@ hfc_img:
   svgo: true
 
 hfc_favicons:
-  enable: false
+  enable: true
   src: img/logo.png
   target: img/
   icons:
     android: true
     appleIcon: true
-    appleStartup: false
-    coast: false
+    appleStartup: true
+    coast: true
     favicons: true
-    firefox: false
-    opengraph: false
+    firefox: true
+    opengraph: true
     windows: true
-    yandex: false
+    yandex: true
+
+service_worker:
+  maximumFileSizeToCacheInBytes: 5242880
+  staticFileGlobs:
+  - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: true
+  runtimeCaching:
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: hm.baidu.com
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: cdn.bootcss.com
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: dn-lbstatics.qbox.me
