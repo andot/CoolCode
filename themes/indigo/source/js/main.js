@@ -241,7 +241,10 @@
         },
         reward: function () {
             var modal = new this.modal('#reward');
-            $('#rewardBtn').addEventListener(even, modal.toggle);
+            $('#rewardBtn').addEventListener(even, function() {
+                mask.parentNode.appendChild($('#reward'));
+                modal.toggle();
+            });
 
             var $rewardToggle = $('#rewardToggle');
             var $rewardCode = $('#rewardCode');
@@ -345,6 +348,7 @@
                     this.setImgRect(this.calcRect());
                 }
 
+                // 不需要对图片进行拉伸操作
                 // this.updateSize = function () {
                 //     var sw = sh = 1;
                 //     if (docW !== body.clientWidth) {

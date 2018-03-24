@@ -23,13 +23,6 @@ menu:
   id-card:
     text: 关于
     url: /about
-  github:
-    url: https://github.com/andot
-    target: _blank
-  qq:
-    text: QQ
-    url: https://sighttp.qq.com/authd?IDKEY=0f7b6690eff38f1a1bc274af3639750f34b370fb0f86105f
-    target: _blank
 
 # 你的头像url
 avatar: /img/avatar.jpg
@@ -39,9 +32,11 @@ avatar_link: /
 brand: /img/brand.jpg
 # favicon
 favicon: /favicon.ico
-
 # email
 email: andot@qq.com
+menu_link:
+  github: https://github.com/andot | github
+  qq: https://sighttp.qq.com/authd?IDKEY=0f7b6690eff38f1a1bc274af3639750f34b370fb0f86105f | qq
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#3F51B5'

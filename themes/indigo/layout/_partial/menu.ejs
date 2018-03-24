@@ -12,6 +12,27 @@
           <h5 class="nickname"><%- config.author %></h5>
           <%- mail_to(theme.email, theme.email, {class: 'mail'}) %>
         </hgroup>
+        <% if (theme.menu_link) { %>
+        <ul class="menu-link">
+            <% for ( let prop in theme.menu_link ) {
+                let linkName = prop;
+                let linkContent = theme.menu_link[ prop ];
+                let {url = "/", icon = "file-o"} = (function() {
+                  let url, icon;
+                  linkContent.replace(/([^\|]+)\s+\|\s+([^\|]+)/g, function() {
+                    return [url, icon] = [arguments[1], arguments[2]];
+                  });
+                  return {url, icon};
+                })();
+              %>
+                <li>
+                  <a href="<%= url %>" target="_blank">
+                    <i class="icon icon-lg icon-<%= icon %>"></i>
+                  </a>
+                </li>
+              <% } %>
+          </ul>
+          <% } %>
       </div>
     </div>
     <div class="scroll-wrap flex-col">

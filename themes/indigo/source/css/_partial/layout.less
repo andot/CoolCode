@@ -117,6 +117,29 @@
             text-decoration: none;
         }
     }
+
+    .menu-link {
+        margin-bottom: 0;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        line-height: 20px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        li {
+            margin: 0 2px;
+            list-style: none;
+            display: inline-block;
+
+            a {
+                color: @lightPrimaryColor;
+                .transition(0.4s);
+            }
+
+            &:hover a {
+                color: @textPrimaryColor;
+            }
+        }
+    }
 }
 
 #main {
