@@ -1,6 +1,7 @@
 ---
 title: lolcat in PowerShell
 date: 2018-03-24 12:09:00
+updated: 2018-03-24 12:09:00
 categories: [编程, PowerShell]
 tags: [PowerShell]
 ---

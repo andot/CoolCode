@@ -1,6 +1,7 @@
 ---
 title: 几个有用的 PowerShell 脚本
 date: 2018-03-19 10:04:00
+updated: 2018-03-24 14:27:31
 categories: [编程, PowerShell]
 tags: [powershell]
 ---
