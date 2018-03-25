@@ -19,17 +19,22 @@ hexo.extend.tag.register('ruby', function(args) {
     var splited = args.join(' ').split('|');
     var origin = splited[0].trim();
     var ruby = origin;
+    var lang = '';
     var convert = true;
     if (splited.length > 1) {
         ruby = splited[1].trim();
-        convert = !!splited[2];
+        if (splited.length > 2) {
+            lang = splited[2].trim();
+        }
+        convert = !!(splited[3]);
     }
     if (convert) {
         ruby = [].concat.apply([],pinyin(ruby, {
             segment: true
         })).join(' ');
     }
-    var ruby_result = "<ruby>" + origin + "<rp> (</rp><rt>" + ruby + "</rt><rp>) </rp></ruby>"
+    var ruby_result = (lang ? "<ruby lang='" + lang + "'>" : "<ruby>") +
+        origin + "<rp> (</rp><rt>" + ruby + "</rt><rp>) </rp></ruby>";
     return ruby_result;
 });
 
