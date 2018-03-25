@@ -3,7 +3,7 @@ title: lolcat in PowerShell
 date: 2018-03-24 12:09:00
 updated: 2018-03-24 12:09:00
 categories: [编程, PowerShell]
-tags: [PowerShell]
+tags: [powershell]
 ---
 
 这两天测试 PowerShell 环境，顺便写了一个小程序 `lolcat` 用来检测 Windows 控制台是否支持 24 位色，这个程序原版是 ruby 写的，用来以彩虹色显示文本。它还有一些其它语言的移植，比如 python，c，js，rust，go 等。不过都不太适合在 PowerShell 环境下运行，一是需要安装运行环境，或者需要自己编译，这一点倒还好说，只是比较麻烦而已。第二点就比较致命了，PowerShell 的管道传递的是对象，而其它语言实现的版本，只能处理文本，所以如果在 PowerShell 中使用其它语言实现的 `lolcat` 跟管道结合使用的话，要么显示的不是你想要的东西，要么干脆就挂掉了。所以，我花了两天时间写了这个 PowerShell 的版本。它可以工作在 Windows 10 自带的 PowerShell 环境下，也可以工作在跨平台的 PowerShell 6.0+ 环境下。
