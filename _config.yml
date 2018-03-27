@@ -157,7 +157,7 @@ hfc_img:
   svgo: true
 
 hfc_favicons:
-  enable: true
+  enable: false
   src: img/logo.png
   target: img/
   icons:
