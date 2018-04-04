@@ -399,8 +399,7 @@ extension=hprose.so
 然后执行：
 
 ```sh
-sudo ln -s /etc/php/7.2/mods-available/hprose.ini /etc/php/7.2/cli/conf.d/20-hprose.ini
-sudo ln -s /etc/php/7.2/mods-available/hprose.ini /etc/php/7.2/fpm/conf.d/20-hprose.ini
+sudo phpenmod hprose
 sudo service php7.2-fpm restart
 ```
 
