@@ -19,8 +19,7 @@ hexo.extend.tag.register('echarts', ([height = 400, width = '85%'], option) => {
     '<script src="//echarts.baidu.com/dist/echarts.common.min.js"></script>' +
     '<script type="text/javascript">' +
         `var myChart = echarts.init(document.getElementById('${id}'));` +
-        `var option = ${option}` +
-        'myChart.setOption(option);' +
+        `myChart.setOption(${option});` +
     '</script>';
 }, {async: true, ends: true});
 
