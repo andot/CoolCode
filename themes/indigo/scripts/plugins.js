@@ -16,11 +16,10 @@ hexo.extend.helper.register('theme_css', (path, cache) => source(path, cache, '.
 hexo.extend.tag.register('echarts', ([height = 400, width = '85%'], option) => {
     var id = 'echarts' + ((Math.random() * 9999) | 0);
     return `<div id="${id}" style="width: ${width};height: ${height}px;margin: 0 auto"></div>` +
-    '<script src="//echarts.baidu.com/dist/echarts.common.min.js"></script>' +
-    '<script type="text/javascript">' +
+    '<scr' + 'ipt type="text/javascript">' +
         `var myChart = echarts.init(document.getElementById('${id}'));` +
         `myChart.setOption(${option});` +
-    '</script>';
+    '</scr' + 'ipt>';
 }, {async: true, ends: true});
 
 const pinyin = require("pinyin");
