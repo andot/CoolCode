@@ -5,7 +5,7 @@ comments: false
 
 # 友情链接
 
-@column-3{
+@column-2{
 
 @card{
 
@@ -16,18 +16,11 @@ comments: false
 
 @card{
 
-[衣明志的技术博客](http://yimingzhi.net/)
 [ZRONG's HOME](https://zengrong.net/)
 [某人的栖息地](http://www.ooso.net/)
 [UGiA.CN](http://www.ugia.cn/)
+[衣明志的技术博客](http://yimingzhi.net/)
 [小懒虫的自由天空](http://yiyi.coolcode.org/)
-
-}
-
-@card{
-
-[我爱美眉网](http://52mm.net.cn)
-[我爱美食](http://52meishi.com.cn)
 
 }
 
