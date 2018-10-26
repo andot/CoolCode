@@ -21,6 +21,10 @@ comments: false
 [UGiA.CN](http://www.ugia.cn/)
 [衣明志的技术博客](http://yimingzhi.net/)
 [小懒虫的自由天空](http://yiyi.coolcode.org/)
+[米米的博客](https://zhangshuqiao.org/)
+[杉木博客](http://w3more.cn)
+[墨香](http://codemx.cn/)
+[Lee](https://lee981265.github.io/)
 
 }
 
