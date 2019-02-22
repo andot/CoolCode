@@ -1,24 +1,24 @@
 ---
-title: Hprose 2.0 for .NET 的序列化为何这么快
+title: Hprose 3.0 for .NET 的序列化为何这么快
 date: 2018-05-05 11:33:00
-updated: 2018-05-05 13:51:00
+updated: 2019-02-22 20:41:00
 categories: [编程, Hprose]
 tags: [hprose, .net, c#]
 ---
 
-经过一个多月的开发，Hprose 2.0 for .NET 的序列化反序列化部分终于基本上完成了。
+经过一年的开发，Hprose 3.0 for .NET 的序列化反序列化部分终于基本上完成了。
 
 这次升级是完全重写了 Hprose for .NET 的代码。
 
 之前的 Hprose 1.x for .NET 兼容 .NET 所有的平台版本，包括 .NET Framework 、.NET Compact Framework、.NET Micro Framework、SilverLight、Windows Phone、Mono、.NET Core 等。
 
-这次升级取消了对一些过时的 .NET 平台的支持。仅保留了对 .NET 4.0+、.NETStandard 2.0、.NET Core 2.0+、Android、iOS、Mac 平台的支持。
+这次升级取消了对一些过时的 .NET 平台的支持。仅保留了对 .NET 3.5 Compact Framework、.NET 4.0+、.NET Core 2.0+、.NETStandard 2.0（包含 Android、iOS、Mac 平台）的支持。
 
 这次升级后的代码，使用了最新版本的 C# 的语法来编写，代码在可读性和性能上较之之前的版本都有了极大的改进。
 
-下面我们就来看看 Hprose 2.0 for .NET 序列化究竟有多快。
+下面我们就来看看 Hprose 3.0 for .NET 序列化究竟有多快。
 
-首先来看一下对象数组序列化反序列化性能对比，测试代码为：[BenchmarkObjectSerialize.cs](https://github.com/andot/hprose-dotnet/blob/master/tests/Hprose.Benchmark/IO/Serializers/BenchmarkObjectSerialize.cs)，测试结果如下表所示：
+首先来看一下对象数组序列化反序列化性能对比，测试代码为：[BenchmarkObjectSerialize.cs](https://github.com/hprose/hprose-dotnet/blob/master/tests/Hprose.Benchmark/IO/BenchmarkObjectSerialize.cs)，测试结果如下表所示：
 
 {% echarts 400 '85%' %}
 {
@@ -105,7 +105,7 @@ tags: [hprose, .net, c#]
 }
 {% endecharts %}
 
-Hprose 2.0 相对于 1.x 相比，增加了对 DataSet、DataTable 序列化和反序列化的支持。下面是 DataSet 序列化反序列化性能对比，测试代码为：[BenchmarkDataSetSerialize.cs](https://github.com/andot/hprose-dotnet/blob/master/tests/Hprose.Benchmark/IO/Serializers/BenchmarkDataSetSerialize.cs)，测试结果如下表所示：
+Hprose 3.0 相对于 1.x 相比，增加了对 DataSet、DataTable 序列化和反序列化的支持。下面是 DataSet 序列化反序列化性能对比，测试代码为：[BenchmarkDataSetSerialize.cs](https://github.com/hprose/hprose-dotnet/blob/master/tests/Hprose.Benchmark/IO/BenchmarkDataSetSerialize.cs)，测试结果如下表所示：
 
 {% echarts 400 '85%' %}
 {
@@ -200,7 +200,7 @@ Hprose 2.0 相对于 1.x 相比，增加了对 DataSet、DataTable 序列化和�
 
 在 Hprose 1.x for .NET 中，序列化和反序列化的代码主要是在 `HproseWriter` 和 `HproseReader` 两个类中实现的。
 
-而 Hprose 2.0 for .NET 中，序列化和反序列化的代码则分别放在 `Hprose.IO.Serializers` 和 `Hprose.IO.Deserializers` 两个名称空间下面，并且定义了两个抽象的泛型类 `Serializer<T>` 和 `Deserializer<T>` 来负责序列化和反序列化。
+而 Hprose 3.0 for .NET 中，序列化和反序列化的代码则分别放在 `Hprose.IO.Serializers` 和 `Hprose.IO.Deserializers` 两个名称空间下面，并且定义了两个抽象的泛型类 `Serializer<T>` 和 `Deserializer<T>` 来负责序列化和反序列化。
 
 每种具体的数据类型的序列化都由一个具体的序列化器来实现，反序列化则由一个具体的反序列化器来实现。
 
@@ -220,13 +220,13 @@ Hprose 2.0 相对于 1.x 相比，增加了对 DataSet、DataTable 序列化和�
 
 除了对序列化器和反序列化器采用了这种特化泛型类 + `ConcurrentDictionary` 的双缓存模式以外，Hprose 在属性字段存取器、类型转换器等实现上也采用了这种方式。
 
-这是 Hprose 2.0 for .NET 序列化和反序列化性能提高的最主要原因之一。
+这是 Hprose 3.0 for .NET 序列化和反序列化性能提高的最主要原因之一。
 
 # 通过表达式树来存取字段和属性
 
 在 Hprose 1.x for .NET 中，对于自定义类型的字段和属性的存取，根据不同的平台采用了直接反射和 Emit 生成代码两种方式。
 
-在 Hprose 2.0 for .NET 中，则统一使用了表达式树生成代码的方式。表达式树生成的代码跟使用 Emit 生成的代码，在执行效率上是没有差别的。但是在实现上，表达式树实现的代码具有更好的可读性。
+在 Hprose 3.0 for .NET 中，则统一使用了表达式树生成代码的方式。表达式树生成的代码跟使用 Emit 生成的代码，在执行效率上是没有差别的。但是在实现上，表达式树实现的代码具有更好的可读性。
 
 另外，对于表达式树生成的代码也做了双缓冲，因此序列化反序列化自定义对象的执行效率几乎可以达到甚至超过硬编码的效率。
 
@@ -271,5 +271,5 @@ Hprose 中为了更快的创建泛型对象，使用了下面这个泛型对象�
 
 该工厂类通过表达式树来生成创建对象的代码，表达式树生成的代码跟直接 `new` 具体类型是一样的，速度上比 `Activator.CreateInstance<T>()` 要快 2 - 3 倍（在 Mono 平台上甚至会快几十倍）。只有当表达式树创建失败时，才会使用 `Activator.CreateInstance` 作为代替方案。另外，这里使用的是 `Activator.CreateInstance(typeof(T), true)`，这样不但在性能上比 `Activator.CreateInstance<T>()` 快几纳秒，而且它还可以创建只有非 `public` 无参构造器的类的对象。
 
-最新版本的代码可以在 github 的 [andot/hprose-dotnet](https://github.com/andot/hprose-dotnet) 分支中查看，因为 Hprose 的客户端和服务器部分尚未完成，所以没有合并入主分支。如果大家有更好的改进方式，欢迎大家提交修改。
+最新版本的代码可以在 github 的 [hprose/hprose-dotnet](https://github.com/hprose/hprose-dotnet) 中查看。如果大家有更好的改进方式，欢迎大家提交修改。
 
