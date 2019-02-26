@@ -16,6 +16,8 @@ tags: [hprose, .net, c#]
 * [Hprose.RPC.AspNet](https://www.nuget.org/packages/Hprose.RPC.AspNet)
 * [Hprose.RPC.AspNetCore](https://www.nuget.org/packages/Hprose.RPC.AspNetCore)
 
+<!--more-->
+
 [Hprose.IO](https://www.nuget.org/packages/Hprose.IO) 是 Hprose 的序列化和反序列化库。支持：
 
 * .NET Framework 3.5 - 4.7.2
