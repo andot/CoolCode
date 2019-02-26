@@ -28,7 +28,7 @@ tags: [hprose, .net, c#]
 
 [Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 是 Hprose RPC 的核心库，提供了 Hprose RPC 的 Http、WebSocket、Tcp、Udp 的服务器和客户端的实现。跟 [Hprose.IO](https://www.nuget.org/packages/Hprose.IO) 相比，该模块除了不支持 .NET Framework 3.5 和 .NET Framework Client Profile 3.5 以外，其它支持的 .NET 环境与 [Hprose.IO](https://www.nuget.org/packages/Hprose.IO) 相同。特别要强调的是，[Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 是支持 .NET Compact Framework 3.5 的，但是在 .NET Compact Framework 3.5 下，不支持 Http、WebSocket 服务器和 WebSocket 客户端，仅支持 Tcp、Udp 服务器和 Http、Tcp、Udp 客户端。另外，在 .NET Framework 4.0 环境下，也不支持 WebSocket 服务器和客户端。
 
-[Hprose.RPC.Plugins](https://www.nuget.org/packages/Hprose.RPC.Plugins) 是 Hprose RPC 的插件库，提供了 Hprose RPC 的一些现成的通用插件。其中包括负载均衡插件，集群容错插件，熔断降级插件，限流插件，推送插件，反向调用插件，单项调用插件和日志插件。其支持的 .NET 环境与 [Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 相同。
+[Hprose.RPC.Plugins](https://www.nuget.org/packages/Hprose.RPC.Plugins) 是 Hprose RPC 的插件库，提供了 Hprose RPC 的一些现成的通用插件。其中包括负载均衡插件，集群容错插件，熔断降级插件，限流插件，推送插件，反向调用插件，单向调用插件和日志插件。其支持的 .NET 环境与 [Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 相同。
 
 [Hprose.RPC.Codec.JSONRPC](https://www.nuget.org/packages/Hprose.RPC.Codec.JSONRPC) 是 Hprose RPC 的 JSONRPC 编码库，通过它，可以让 Hprose 服务器和客户端变身为 JSONRPC 2.0 的服务器和客户端，而且对于服务器来说，可以同时提供 JSONRPC 2.0 服务和 Hprose 3.0 服务。其支持的 .NET 环境与 [Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 相同。
 
