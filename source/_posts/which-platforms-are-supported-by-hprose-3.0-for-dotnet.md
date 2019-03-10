@@ -20,9 +20,9 @@ tags: [hprose, .net, c#]
 
 [Hprose.IO](https://www.nuget.org/packages/Hprose.IO) 是 Hprose 的序列化和反序列化库。支持：
 
-* .NET Framework 3.5 - 4.7.2
+* .NET Framework 3.5+
 * .NET Framework Client Profile 3.5 - 4.0
-* .NET Core 2.0 - 2.2
+* .NET Core 2.0+
 * .NET Compact Framework 3.5
 * .NET Standard 2.0
 
