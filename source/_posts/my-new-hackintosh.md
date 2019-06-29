@@ -36,7 +36,7 @@ tags: [mac]
 |     8GB 2666MHz DDR4      |            32G 2666Mhz DDR4             | Mac mini 要换 32G 内存需要加 4404 元         |
 |        Intel 核显         |           Intel 核显 + RX580            | Mac mini 没有独显，加钱也没有                |
 |      128GB 固态硬盘       |          512G + 960G 固态硬盘           | Mac mini 就算换 1T 固态硬盘也需要加 5872 元  |
-| USB 3.0 * 2 + USB 3.1 * 4 | USB 2.0 * 4 + USB 3.0 * 2 + USB 3.1 * 3 | Mac mini Type-C 接口虽多，但 Type-A 的不够用 |
+| USB 3.0 x 2 + USB 3.1 x 4 | USB 2.0 x 4 + USB 3.0 x 2 + USB 3.1 x 3 | Mac mini Type-C 接口虽多，但 Type-A 的不够用 |
 
 单纯对比这几项，我们就会发现，即使 Mac mini 再加上 12610 元，把配置升级了，还是比这台黑苹果的配置差劲，因为这还没算上显卡。
 
