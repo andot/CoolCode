@@ -99,5 +99,5 @@ Mac 安装盘镜像从[果黑小兵的部落阁](https://blog.daliansky.net/)下
 
 接下来，用 Clover Configurator 把安装盘上的 EFI 目录复制的安装好的系统的 EFI 盘的 EFI 目录中。之后就不需要 U 盘，直接可以通过硬盘启动了。
 
-接下来对系统的优化可以参考：https://github.com/SuperNG6/MSI-B360-10.14.5-EFI/wiki，这里就不啰嗦了。
+接下来对系统的优化可以参考：https://github.com/SuperNG6/MSI-B360-10.14.5-EFI/wiki ，这里就不啰嗦了。
 
