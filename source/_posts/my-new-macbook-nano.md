@@ -1,7 +1,7 @@
 ---
 title: 将 GPD P2 Max 变身为 Macbook Nano
 date: 2019-12-07 22:46:00
-updated: 2019-12-07 22:46:00
+updated: 2019-12-08 01:45:00
 categories: [操作系统, Mac]
 tags: [mac]
 ---
@@ -28,7 +28,7 @@ tags: [mac]
 
 价格上，壹号本比同配置的 GPD P2 Max 贵 1000 块钱，既然有便宜又好用的，干嘛要选贵的呢。所以，比较之后，就只剩下 GPD P2 Max 这一款可以选择了。
 
-说了这么多，最终让我下决心买这款 GPD P2 Max 的决定性因素是我发现了这个项目：https://github.com/Azkali/GPD-P2-MAX-Hackintosh，一个可以在 GPD P2 Max 上完美安装 MacOS 的解决方案。
+说了这么多，最终让我下决心买这款 GPD P2 Max 的决定性因素是我发现了这个项目：https://github.com/Azkali/GPD-P2-MAX-Hackintosh ，一个可以在 GPD P2 Max 上完美安装 MacOS 的解决方案。
 
 买来之后，我按照这个项目中的说明一次就安装成功了，最终结果也果然没有让我失望，体验非常好。
 
@@ -52,4 +52,4 @@ tags: [mac]
 
 总之，这个价格能买到一个可以跑 Windows 和 MacOS 双系统的高分屏的超便携笔记本，我已经很知足了。
 
-另外，我 fork 了一份上面那个项目，并且做了一些修改和升级，这是我 fork 的项目地址：https://github.com/andot/GPD-P2-MAX-Hackintosh，当然我也给原作者提交 pull request 了。如果原作者过些日子合并了的话，就直接参考他那个地址就可以了。
+另外，我 fork 了一份上面那个项目，并且做了一些修改和升级，这是我 fork 的项目地址：https://github.com/andot/GPD-P2-MAX-Hackintosh ，当然我也给原作者提交 pull request 了。如果原作者过些日子合并了的话，就直接参考他那个地址就可以了。
