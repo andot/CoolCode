@@ -1,7 +1,7 @@
 ---
 title: 将 GPD P2 Max 变身为 Macbook Nano
 date: 2019-12-07 22:46:00
-updated: 2019-12-08 01:45:00
+updated: 2019-12-08 13:32:00
 categories: [操作系统, Mac]
 tags: [mac]
 ---
@@ -34,7 +34,7 @@ tags: [mac]
 
 在性能上，这款装了 MacOS 的 GPD P2 Max 跟最新的 2018，2019 款的 MacBook Air 差不多，CPU 单核跑分甚至胜过这两款最新的 MacBook Air，多核跑分上比这两款最新的 MacBook Air 稍低，不过我这是在 GPD P2 Max 的 BIOS 中设置为风扇静音的节能模式下测试的结果，如果打开性能模式，可能跑分会更高一些。
 
-而在便利性上，这款 GPD P2 Max 可比 MacBook Air 轻便多了，毕竟 MacBook Air 现在最小的也有 13 寸，跟 MacBook Pro 比起来只能算低配，而不能算轻便。而价格上 MacBook Air 也不美丽，在内存和硬盘大小相同的配置下，最新的 MacBook Air 比这款 GPD P2 Max 可是贵了整整 100000 块钱呢，而 GPD P2 Max 只有 MacBook Air 三分之一的价格。
+而在便利性上，这款 GPD P2 Max 可比 MacBook Air 轻便多了，毕竟 MacBook Air 现在最小的也有 13 寸，跟 MacBook Pro 比起来只能算低配，而不能算轻便。而价格上 MacBook Air 也不美丽，在内存和硬盘大小相同的配置下，最新的 MacBook Air 比这款 GPD P2 Max 可是贵了整整 10000 块钱呢，而 GPD P2 Max 只有 MacBook Air 三分之一的价格。
 
 另外，这款 GPD P2 Max 在装 MacOS 选择 SMBIOS 机型时，除了原作者写的 MacBook10,1 这个机型以外，其实还可以选择上面那两款最新的 MacBook Air 机型（MacBookAir8,1 和 MacBookAir8,2），这样显得更时尚一些，逼也可以装的更足。
 
