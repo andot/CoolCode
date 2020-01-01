@@ -1,7 +1,7 @@
 ---
 title: 几个有用的 PowerShell 脚本
 date: 2018-03-19 10:04:00
-updated: 2018-03-24 14:27:31
+updated: 2020-01-01 14:28:00
 categories: [编程, PowerShell]
 tags: [powershell]
 ---
@@ -9,6 +9,17 @@ tags: [powershell]
 前一篇文章介绍了如何美化 PowerShell，今天来写几个比较实用的 PowerShell 脚本。
 
 <!-- more -->
+
+
+# 更新 PowerShell 的 NuGet
+
+默认 PowerShell 自带的 NuGet 还是 2.8 版本，使用这个版本无法正常发布 PowerShell 模块，所以需要将 NuGet 更新到最新版本。
+
+```powershell
+Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile "$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\PowerShellGet\NuGet.exe"
+```
+
+运行一次就行了。
 
 # 通过 cd... 进入上上级目录
 
