@@ -1,7 +1,7 @@
 ---
 title: Hprose 3.0 for .NET 支持哪些平台
 date: 2019-02-26 20:47:00
-updated: 2019-02-26 20:41:00
+updated: 2020-01-01 15:59:00
 categories: [编程, Hprose]
 tags: [hprose, .net, c#]
 ---
@@ -24,7 +24,7 @@ tags: [hprose, .net, c#]
 * .NET Framework Client Profile 3.5 - 4.0
 * .NET Core 2.0+
 * .NET Compact Framework 3.5
-* .NET Standard 2.0
+* .NET Standard 2.0+
 
 [Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 是 Hprose RPC 的核心库，提供了 Hprose RPC 的 Http、WebSocket、Tcp、Udp 的服务器和客户端的实现。跟 [Hprose.IO](https://www.nuget.org/packages/Hprose.IO) 相比，该模块除了不支持 .NET Framework 3.5 和 .NET Framework Client Profile 3.5 以外，其它支持的 .NET 环境与 [Hprose.IO](https://www.nuget.org/packages/Hprose.IO) 相同。特别要强调的是，[Hprose.RPC](https://www.nuget.org/packages/Hprose.RPC) 是支持 .NET Compact Framework 3.5 的，但是在 .NET Compact Framework 3.5 下，不支持 Http、WebSocket 服务器和 WebSocket 客户端，仅支持 Tcp、Udp 服务器和 Http、Tcp、Udp 客户端。另外，在 .NET Framework 4.0 环境下，也不支持 WebSocket 服务器和客户端。
 
