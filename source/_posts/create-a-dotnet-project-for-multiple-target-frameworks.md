@@ -1,15 +1,15 @@
 ---
 title: 创建面向多目标框架的.NET项目
 date: 2018-03-26 12:10:55
-updated: 2018-03-26 13:21:37
+updated: 2020-01-01 15:55:37
 categories: [编程,.NET]
 tags: [c#]
 ---
 之前在开发 hprose for .NET 时，因为老版本的 Visual Studio 不支持创建面向多个目标框架的 .NET 项目，所以只能在一个 .NET 工程下面为每个目标框架的 .NET 版本创建一个 csproj 项目文件，费时又费力。所以我甚至一度抛弃创建 .NET 工程项目，用编写 bat 文件的命令行方式来编译 hprose for .NET 的 dll 类库。
 
-现在要开发 hprose 2.0 for .NET 时，我希望能够在这方面省点事，毕竟现在的 .NET 跟之前比起来，版本更多了，而且还增加了许多跨平台的目标框架，如果还用 bat 的方式来编译打包，想一想都是很头疼的事情。
+现在要开发 hprose 3.0 for .NET 时，我希望能够在这方面省点事，毕竟现在的 .NET 跟之前比起来，版本更多了，而且还增加了许多跨平台的目标框架，如果还用 bat 的方式来编译打包，想一想都是很头疼的事情。
 
- 微软估计也考虑到了这一点，所以现在终于在 .NET Core 2.0 和 Visual Studio 2017 提供了一种新的 csproj 格式，使用这种格式，就可以创建面向多个目标框架的 .NET 项目了。这对于开发多目标框架的 .NET 库来说，无疑是提供了很大的便利。
+ 微软估计也考虑到了这一点，所以现在终于在 Visual Studio 2017/2019 中提供了一种新的 csproj 格式，使用这种格式，就可以创建面向多个目标框架的 .NET 项目了。这对于开发多目标框架的 .NET 库来说，无疑是提供了很大的便利。
 
  <!--more-->
 
@@ -23,9 +23,9 @@ tags: [c#]
 
  就可以了。
 
- 如果使用 Visual Studio 2017 的话，选择新建项目，然后选择 .NET Core 或者 .NET Standard，之后选择类库，就可以了，如图：
+ 如果使用 Visual Studio 2017/2019 的话，选择新建项目，然后选择 .NET Core 或者 .NET Standard，之后选择类库，就可以了，如图：
 
-![创建 .NET Core 类库](create-netcoreapp-library-in-vs2017.png)
+![创建 .NET Core 类库](create-netcoreapp-library-in-vs2017/2019.png)
 
  新创建的 .csproj 项目文件，可以直接用文本编辑器（比如 VSCode 等）打开，里面内容很简单：
 
@@ -55,13 +55,13 @@ tags: [c#]
 </Project>
 ```
 
-上面这些目标框架是 .NET Core 和 Visual Studio 2017 默认就支持的，只要这样写上，就可以直接用命令行：
+上面这些目标框架是 .NET Core 和 Visual Studio 2017/2019 默认就支持的，只要这样写上，就可以直接用命令行：
 
 ```cmd
 dotnet build
 ```
 
-或在 Visual Studio 2017 中编译通过。
+或在 Visual Studio 2017/2019 中编译通过。
 
 但如果创建的不是类库，而是单元测试（mstest 和 xunit）项目的话，`netstandardx.x` 和 `net40` 就不支持了，这一点是测试框架限制的。
 
@@ -77,9 +77,9 @@ dotnet build
 </Project>
 ```
 
-如果不考虑测试，那么在 Visual Studio 2017 中，还可以添加上：`net20`、`net30` 和 `net35` 这三个目标框架。
+如果不考虑测试，那么在 Visual Studio 2017/2019 中，还可以添加上：`net20`、`net30` 和 `net35` 这三个目标框架。
 
-这些可以在 Visual Studio 2017 中可以编译通过，使用 dotnet 命令行的话，会显示：
+这些可以在 Visual Studio 2017/2019 中可以编译通过，使用 dotnet 命令行的话，会显示：
 
 
 > <span style="color: red">C:\Program Files\dotnet\sdk\2.1.4\Microsoft.Common.CurrentVersion.targets(1124,5): error MSB3644: 未找到框架“.NETFramework,Version=v2.0”的引用程序集。若要解决此问题，请安装此框架版本的 SDK 或 Targeting Pack，或将应用程序的目标重新指向已装有 SDK 或 Targeting Pack 的框架版本。请注意，将从全局程序集缓存(GAC)解析程序集，并将使用这些程序集替换引用程序集。因此，程序集的目标可能未正确指向您所预期的框架。</span>
@@ -149,6 +149,8 @@ C# 从一开始就支持条件编译，不过最初并没有为每个不同版�
 | .NET Framework 4.6.2 | `NET462`         |
 | .NET Framework 4.7   | `NET47`          |
 | .NET Framework 4.7.1 | `NET471`         |
+| .NET Framework 4.7.2 | `NET472`         |
+| .NET Framework 4.8   | `NET48`          |
 | .NET Standard 1.0    | `NETSTANDARD1_0` |
 | .NET Standard 1.1    | `NETSTANDARD1_1` |
 | .NET Standard 1.2    | `NETSTANDARD1_2` |
@@ -157,9 +159,14 @@ C# 从一开始就支持条件编译，不过最初并没有为每个不同版�
 | .NET Standard 1.5    | `NETSTANDARD1_5` |
 | .NET Standard 1.6    | `NETSTANDARD1_6` |
 | .NET Standard 2.0    | `NETSTANDARD2_0` |
+| .NET Standard 2.1    | `NETSTANDARD2_1` |
 | .NET Core 1.0        | `NETCOREAPP1_0`  |
 | .NET Core 1.1        | `NETCOREAPP1_1`  |
 | .NET Core 2.0        | `NETCOREAPP2_0`  |
+| .NET Core 2.1        | `NETCOREAPP2_1`  |
+| .NET Core 2.2        | `NETCOREAPP2_2`  |
+| .NET Core 3.0        | `NETCOREAPP3_0`  |
+| .NET Core 3.1        | `NETCOREAPP3_1`  |
 
 如果感觉不够用，还可以自己添加，例如：
 
@@ -179,7 +186,7 @@ C# 从一开始就支持条件编译，不过最初并没有为每个不同版�
 
 # 添加 Android 平台支持
 
-默认情况下，使用 Visual Studio 2017 创建的 Android 类库项目是不使用这个新版本 .csproj 格式的。不过我们可以手动把 Android 平台添加到已有的这个项目中。
+默认情况下，使用 Visual Studio 2017/2019 创建的 Android 类库项目是不使用这个新版本 .csproj 格式的。不过我们可以手动把 Android 平台添加到已有的这个项目中。
 
 首先在 `<TargetFrameworks>...</TargetFrameworks>` 里面加入 `monoandroid71`。其中 `monoandroid` 是目标框架标识，`71` 是目标框架版本号。然后加入下列代码：
 
@@ -255,6 +262,6 @@ Android 目标框架有好几个版本，我目前还不确定是否只添加最
 
 # 其它平台
 
-.NET Compact Framework, .NET Micro Framwork, Windows Phone 这几个平台目前还没有研究，因为在 hprose 2.0 for .NET 中不打算支持它们了。其实 .NET 2.0、3.0、3.5、4.0 这几个版本的 .NET 框架以及 SliverLight 平台我也不打算在 hprose 2.0 中支持了。支持它们不但需要写大量的条件编译，而且编写代码时不能使用新特性，微软的测试框架也不支持，写起代码来太不爽了。
+.NET Compact Framework, .NET Micro Framwork, Windows Phone 这几个平台目前还没有研究，因为在 hprose 3.0 for .NET 中不打算支持它们了。其实 .NET 2.0、3.0、3.5 这几个版本的 .NET 框架以及 SliverLight 平台我也不打算在 hprose 3.0 中支持了。支持它们不但需要写大量的条件编译，而且编写代码时不能使用新特性，微软的测试框架也不支持，写起代码来太不爽了。
 
 UWP（uap）这个平台我还不知道怎么配置到这个多目标框架的 .csproj 项目中，试了好久，都没有成功，也许还不支持吧。
