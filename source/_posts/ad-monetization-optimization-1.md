@@ -1,10 +1,14 @@
 ---
-title: 媒体广告变现优化之道——设备信息获取（一）
+title: 媒体广告变现优化之道（一）
 date: 2018-02-17 20:10:00
 updated: 2020-02-07 20:10:00
 categories: [广告]
 tags: [广告, Android, iOS]
 ---
+
+# 如何获取 make，brand 和 model
+
+## 引用
 
 如今，媒体与广告平台之间的对接方式除了直接使用广告平台提供的 SDK 以外，还有很多是采用 API 方式来对接的。
 
@@ -28,7 +32,7 @@ brand 虽然是选填参数，但在实际应用过程中，adtalos 的广告主
 
 下面我们分别就 Android 和 iOS 这两种系统来说一下这三个设备信息如何获取。
 
-# Android 系统下的获取方法
+## Android 系统下的获取方法
 
 对于 Android 系统来说，这三个信息在 `android.os.Build` 类中都有明确的定义，获取方式非常简单直接：
 
@@ -52,7 +56,7 @@ final class DeviceInfo {
 
 这里就不在详细展开说明了。
 
-# iOS 系统下的获取方法
+## iOS 系统下的获取方法
 
 对于 iOS 系统来说，在 OpenRTB 中，make 和 model 的取值都有明确的说明。
 
