@@ -31,17 +31,17 @@ MEID (Mobile Equipment IDentifier) 是移动设备识别码，它也是一个全
 对于 Android 设备来说，可以通过下面的方法来获取 IMEI/MEID：
 
 ```java
-    static String getDeviceId(Context context) {
-        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (tm != null) {
-            try {
-                String id = tm.getDeviceId();
-                if (id != null) return id;
-            } catch (SecurityException e) {
-            }
+static String getDeviceId(Context context) {
+    TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+    if (tm != null) {
+        try {
+            String id = tm.getDeviceId();
+            if (id != null) return id;
+        } catch (SecurityException e) {
         }
-        return "";
     }
+    return "";
+}
 ```
 
 对于非手机设备，如 Android 平板电脑，电视等，这些设备没有通话的硬件功能，系统中也就没有 `TELEPHONY_SERVICE`，所以这里要判断一下 `tm` 这个返回值是否为空。
@@ -59,17 +59,17 @@ IMSI (International Mobile Subscriber Identity) 是国际移动用户识别码�
 对于 Android 设备来说，获取 IMSI 的方法跟获取 IMEI/MEID 的方法类似：
 
 ```java
-    static String getIMSI(Context context) {
-        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (tm != null) {
-            try {
-                String id = tm.getSubscriberId();
-                if (id != null) return id;
-            } catch (SecurityException e) {
-            }
+static String getIMSI(Context context) {
+    TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+    if (tm != null) {
+        try {
+            String id = tm.getSubscriberId();
+            if (id != null) return id;
+        } catch (SecurityException e) {
         }
-        return "";
     }
+    return "";
+}
 ```
 
 在 Android 上获取 IMSI 的权限要求跟 IMEI/MEID 一样，这里就不在重复。
@@ -81,7 +81,9 @@ Android ID 是 Android 设备里不依赖于硬件的一种「半永久标识符
 Android ID 获取的方式很简单：
 
 ```java
-String android_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
+static String getAndroidID(Context context) {
+    return Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
+}
 ```
 
 但是在 Android 8.0 以后，签名不同的 App 所获取的 Android ID 是不一样的，但同一个开发者可以根据自己的数字签名，将所开发的不同 App 进行关联。
@@ -132,30 +134,30 @@ IDFA 和 IDFV 都可能获取不到值，获取不到时，返回值为 `nil`。
 对于 Android 来说，情况稍微好一点，虽然从 Android 6.0 开始，通过 `WifiInfo` 获取到的 Mac 地址永远是 `02:00:00:00:00:00` 这样一个固定值。但是通过下面这个方法还是可以在大多数情况下获取到 Mac 地址的：
 
 ```java
-    static String getMac() {
-        try {
-            List<NetworkInterface> all = Collections.list(NetworkInterface.getNetworkInterfaces());
-            for (NetworkInterface nif : all) {
-                if (!nif.getName().equalsIgnoreCase("wlan0") &&
-                        !nif.getName().equalsIgnoreCase("eth0")) continue;
-                byte[] macBytes = nif.getHardwareAddress();
-                if (macBytes == null) {
-                    return "";
-                }
-                StringBuilder sb = new StringBuilder();
-                for (byte b : macBytes) {
-                    sb.append(String.format("%02X:", b));
-                }
-                if (sb.length() > 0) {
-                    sb.deleteCharAt(sb.length() - 1);
-                }
-                return sb.toString();
+static String getMac() {
+    try {
+        List<NetworkInterface> all = Collections.list(NetworkInterface.getNetworkInterfaces());
+        for (NetworkInterface nif : all) {
+            if (!nif.getName().equalsIgnoreCase("wlan0") &&
+                    !nif.getName().equalsIgnoreCase("eth0")) continue;
+            byte[] macBytes = nif.getHardwareAddress();
+            if (macBytes == null) {
+                return "";
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            StringBuilder sb = new StringBuilder();
+            for (byte b : macBytes) {
+                sb.append(String.format("%02X:", b));
+            }
+            if (sb.length() > 0) {
+                sb.deleteCharAt(sb.length() - 1);
+            }
+            return sb.toString();
         }
-        return "";
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+    return "";
+}
 ```
 
 原理是扫描各个网络接口，当网络接口是 `wlan0` 或者 `eth0` 时，返回它的 Mac 地址。
