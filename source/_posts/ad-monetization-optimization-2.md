@@ -88,9 +88,9 @@ static String getAndroidID(Context context) {
 
 但是在 Android 8.0 以后，签名不同的 App 所获取的 Android ID 是不一样的，但同一个开发者可以根据自己的数字签名，将所开发的不同 App 进行关联。
 
-## AAID
+## Android AdID
 
-AAID 即 Android Ad ID，是 Android 平台专为广告跟踪提供的唯一标识。但是 AAID 依赖 Google 服务框架，但国内手机基本上都没有内置 Google 服务框架，这种情况下，就无法获取 AAID。因此，这里就不做讨论了。
+Android AdID (简称 AAID) 是 Android 平台专为广告跟踪提供的唯一标识。但是 AAID 依赖 Google 服务框架，但国内手机基本上都没有内置 Google 服务框架，这种情况下，就无法获取 AAID。因此，这里就不做讨论了。
 
 ## OAID
 
