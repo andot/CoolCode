@@ -138,8 +138,9 @@ static String getMac() {
     try {
         List<NetworkInterface> all = Collections.list(NetworkInterface.getNetworkInterfaces());
         for (NetworkInterface nif : all) {
-            if (!nif.getName().equalsIgnoreCase("wlan0") &&
-                    !nif.getName().equalsIgnoreCase("eth0")) continue;
+            if (!nif.getName().equalsIgnoreCase("wlan0") && !nif.getName().equalsIgnoreCase("eth0")) {
+                continue;
+            }
             byte[] macBytes = nif.getHardwareAddress();
             if (macBytes == null) {
                 return "";
