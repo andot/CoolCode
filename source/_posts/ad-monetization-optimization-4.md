@@ -27,6 +27,8 @@ tags: [广告, Android, iOS]
 
 下面我们来就 Android 和 iOS 设备来分别讨论如何获取这些信息。
 
+<!--more-->
+
 ## 获取 Android 设备的屏幕信息
 
 对于 Android 设备来说，这些信息都可以通过 `DisplayMetrics` 类来获取。所有首先要获取一个有效的 `DisplayMetrics` 对象。
