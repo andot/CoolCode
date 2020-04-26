@@ -1,0 +1,107 @@
+"Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+A, Ctrl+Y, Ctrl+Z, Ctrl+S 跟 windows 一样
+runtime! mswin.vim
+
+let g:airline_powerline_fonts=1
+set laststatus=2
+
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#buffer_nr_show=1
+
+let g:airline#extensions#ycm#enabled=1
+
+autocmd! bufwritepost .vimrc source % "vimrc文件修改之后自动加载。 linux。
+
+set completeopt=longest,menu "自动补全配置,让Vim的补全菜单行为与一般IDE一致
+set cursorcolumn             "突出显示当前列，可用Ctrl+m切换是否显示
+set cursorline               "突出显示当前行，可用Ctrl+m切换是否显示
+set history=3000             "history存储长度
+set nu                       "显示行数
+set shiftwidth=4             "换行时行间交错使用4空格
+set cindent shiftwidth=4     "自动缩进4空格
+set tabstop=4                "让一个tab等于4个空格
+set showmatch                "显示括号配对情况
+set autoread                 "当文件在外部被改变时，Vim自动更新载入
+set noswapfile               "关闭交换文件
+set showmode                 "开启模式显示
+set cmdheight=1              "命令部分高度为1
+set shortmess=atI            "启动的时候不显示那个援助索马里儿童的提示
+set t_ti= t_te=              "退出vim后，内容显示在终端屏幕
+set novisualbell             "don't beep
+set noerrorbells             "don't beep
+
+set wildmode=list:longest
+set ttyfast
+
+
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set scrolloff=3              "至少有3行在光标所在行上下
+
+
+set selection=old
+set selectmode=mouse,key
+set viminfo^=%               "Remember info about open buffers on close
+set viminfo+=!               "保存全局变量
+set magic                    "正则表达式匹配形式
+
+"autocmd InsertEnter * se cul "用浅色高亮当前行
+set ruler                    "显示标尺
+set showcmd                  "输入的命令显示出来，看的清楚些
+
+
+"设置标记一列的背景颜色和数字一行颜色一致
+hi! link SignColumn   LineNr
+hi! link ShowMarksHLl DiffAdd
+hi! link ShowMarksHLu DiffChange
+
+set hlsearch                 "高亮显示结果
+set incsearch                "在输入要搜索的文字时，vim会实时匹配
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" F1 - F4 设置
+" F1 废弃这个键,防止调出系统帮助
+" F2 行号开关，用于鼠标复制代码用
+" F3 换行开关
+" F4 粘贴模式paste_mode开关,用于有格式的代码粘贴
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
+nnoremap <F1> <Esc>"
+nnoremap <F2> :set nonumber! number?<CR>
+nnoremap <F3> :set wrap! wrap?<CR>
+set pastetoggle=<F4>             "when in insert mode, press <F5> to go to
+                                 "paste mode, where you can paste mass data
+                                 "that won't be autoindented
+au InsertLeave * set nopaste
+
+" disbale paste mode when leaving insert mode
+
+
+"Treat long lines as break lines (useful when moving around in them)
+"se swap之后，同物理行上线直接跳
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+nnoremap <Up> gk
+nnoremap <Down> gj
+
+colorscheme torte
+
+" 多语言语法检查
+let g:syntastic_error_symbol='✗'      "set error or warning signs
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_highlighting=0
+let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
+let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+let g:syntastic_html_checkers=['tidy', 'jshint']
+let g:syntastic_cpp_include_dirs = ['/usr/include/']
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+let g:syntastic_enable_balloons = 1 "whether to show balloons
+highlight SyntasticErrorSign guifg=white guibg=black
+

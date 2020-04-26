@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://coolcode.org</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/10/06/my-japanese-learning-notes-24/</loc>
+        <lastmod>2020-04-26T12:55:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/10/05/my-japanese-learning-notes-23/</loc>
+        <lastmod>2020-04-22T12:10:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/10/04/my-japanese-learning-notes-22/</loc>
+        <lastmod>2020-04-20T13:49:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/10/03/my-japanese-learning-notes-21/</loc>
+        <lastmod>2020-04-15T01:19:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/10/01/my-japanese-learning-notes-19/</loc>
+        <lastmod>2020-04-10T00:48:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/10/02/my-japanese-learning-notes-20/</loc>
+        <lastmod>2020-04-10T00:37:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/30/my-japanese-learning-notes-18/</loc>
+        <lastmod>2020-04-08T00:09:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/03/11/ad-monetization-optimization-5/</loc>
+        <lastmod>2020-03-11T11:31:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/04/10/ad-monetization-optimization-7/</loc>
+        <lastmod>2020-03-10T04:32:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/04/09/ad-monetization-optimization-6/</loc>
+        <lastmod>2020-03-09T11:32:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/03/06/ad-monetization-optimization-4/</loc>
+        <lastmod>2020-03-06T09:54:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/02/27/ad-monetization-optimization-3/</loc>
+        <lastmod>2020-02-27T13:46:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/02/21/ad-monetization-optimization-2/</loc>
+        <lastmod>2020-02-21T09:46:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/02/17/ad-monetization-optimization-1/</loc>
+        <lastmod>2020-02-17T12:10:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2020/02/04/my-experience-of-remote-working-in-adtalos-for-one-year/</loc>
+        <lastmod>2020-02-05T11:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2019/02/26/which-platforms-are-supported-by-hprose-3.0-for-dotnet/</loc>
+        <lastmod>2020-01-01T07:59:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2018/03/26/create-a-dotnet-project-for-multiple-target-frameworks/</loc>
+        <lastmod>2020-01-01T07:55:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2019/02/22/how-to-compile-hprose-3.0-for-dotnet-on-vs2019/</loc>
+        <lastmod>2020-01-01T07:49:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2018/03/19/some-useful-scripts-of-powershell/</loc>
+        <lastmod>2020-01-01T06:28:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2019/12/07/my-new-macbook-nano/</loc>
+        <lastmod>2019-12-08T05:32:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2019/06/26/my-new-hackintosh/</loc>
+        <lastmod>2019-06-29T13:09:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2018/05/05/why-the-serialization-of-hprose-3.0-for-dotnet-is-so-fast/</loc>
+        <lastmod>2019-02-22T12:41:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2018/04/03/upgrade-to-debian9-on-aliyun/</loc>
+        <lastmod>2018-04-03T19:04:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/29/my-japanese-learning-notes-17/</loc>
+        <lastmod>2018-03-29T11:55:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/28/my-japanese-learning-notes-16/</loc>
+        <lastmod>2018-03-28T02:24:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/26/my-japanese-learning-notes-15/</loc>
+        <lastmod>2018-03-27T08:07:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/26/my-japanese-learning-notes-14/</loc>
+        <lastmod>2018-03-27T07:42:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/25/my-japanese-learning-notes-13/</loc>
+        <lastmod>2018-03-27T05:59:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/23/my-japanese-learning-notes-12/</loc>
+        <lastmod>2018-03-26T14:15:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/23/my-japanese-learning-notes-11/</loc>
+        <lastmod>2018-03-26T13:51:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/21/my-japanese-learning-notes-10/</loc>
+        <lastmod>2018-03-26T13:44:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/21/my-japanese-learning-notes-9/</loc>
+        <lastmod>2018-03-25T06:55:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/20/my-japanese-learning-notes-8/</loc>
+        <lastmod>2018-03-25T04:21:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/19/my-japanese-learning-notes-7/</loc>
+        <lastmod>2018-03-25T03:02:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/17/my-japanese-learning-notes-6/</loc>
+        <lastmod>2018-03-25T01:59:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/17/my-japanese-learning-notes-5/</loc>
+        <lastmod>2018-03-25T00:58:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/12/my-japanese-learning-notes-1/</loc>
+        <lastmod>2018-03-24T06:27:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/14/my-japanese-learning-notes-2/</loc>
+        <lastmod>2018-03-24T06:27:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/14/my-japanese-learning-notes-3/</loc>
+        <lastmod>2018-03-24T06:27:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/15/my-japanese-learning-notes-4/</loc>
+        <lastmod>2018-03-24T06:27:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2017/09/12/my-japanese-learning-notes/</loc>
+        <lastmod>2018-03-24T06:27:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2018/03/24/lolcat-in-powershell/</loc>
+        <lastmod>2018-03-24T04:09:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2018/03/16/how-to-make-your-powershell-beautiful/</loc>
+        <lastmod>2018-03-18T02:02:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2016/11/22/hprose-coroutine-library-for-javascript/</loc>
+        <lastmod>2018-03-14T04:51:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://coolcode.org/2016/11/08/a-brief-analysis-of-serialization-and-deserialization/</loc>
+        <lastmod>2016-11-10T16:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
